@@ -1,15 +1,19 @@
-import rooms from '@/data/rooms.json';
 import RoomCard from '@/app/components/RoomCard';
 import Heading from '@/app/components/Heading';
+import getAllRooms from '@/app/actions/getAllRooms';
 
-export default function Home() {
+export default async function Home() {
+  const rooms = await getAllRooms();
+
+  console.log(rooms);
+
   return (
     <>
       <Heading title="Available Rooms" />
       {
         rooms?.length
           ? (
-            rooms.map((room) => <RoomCard key={room.id} room={room} />)
+            rooms.map((room) => <RoomCard key={room.$id} room={room} />)
           )
           : (
             <p>No rooms available at the moment</p>
