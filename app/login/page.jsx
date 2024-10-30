@@ -3,8 +3,8 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import createSession from '@/app/actions/createSession';
-import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
   const [state, formAction] = React.useActionState(createSession, {});
