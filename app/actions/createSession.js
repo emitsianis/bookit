@@ -18,7 +18,7 @@ async function createSession(prevState, formData) {
   try {
     const session = await account.createEmailPasswordSession(email, password);
 
-    cookies().set('appwrite-session', session.secret, {
+    await cookies().set('appwrite-session', session.secret, {
       httpOnly: true,
       secure: true,
       sameSite: 'strict',
