@@ -14,6 +14,7 @@ async function checkAuth() {
 
   try {
     const { account } = await createSessionClient(sessionCookie.value);
+
     const user = await account.get();
 
     return {
