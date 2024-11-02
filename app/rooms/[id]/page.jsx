@@ -41,7 +41,7 @@ const RoomPage = async ({ params }) => {
         />
       </div>
 
-      <BookingForm />
+      <BookingForm room={room} />
     </div>
 
   </>);
